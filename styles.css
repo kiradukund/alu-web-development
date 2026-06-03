@@ -1,4 +1,4 @@
-/* General */
+/* ===== RESET & BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -10,71 +10,73 @@ body {
     color: #071629;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.purple {
-    color: #C271FF;
-}
-
-/* Header */
+/* ===== HEADER ===== */
 header {
-    background-color: transparent;
     position: absolute;
     width: 100%;
     z-index: 10;
+    padding: 20px 0;
 }
 
-header .container {
+header > div {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 
-header nav a {
+header > div > a img {
+    height: 35px;
+}
+
+header > div > div {
+    display: flex;
+    gap: 30px;
+}
+
+header > div > div a {
     color: white;
     text-decoration: none;
-    margin-left: 30px;
     font-weight: bold;
     font-size: 14px;
 }
 
-header .logo img {
-    height: 35px;
-}
-
-/* Banner */
-.banner {
+/* ===== BANNER (first section) ===== */
+main > section:first-of-type {
     background: url('images/banner.jpg') center center / cover no-repeat;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
+    padding: 100px 20px 60px;
 }
 
-.banner .container {
-    width: 100%;
+main > section:first-of-type > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.banner h1 {
+main > section:first-of-type h1 {
     font-size: 120px;
     font-weight: 900;
+    line-height: 1;
     margin-bottom: 20px;
 }
 
-.banner > .container > p {
+main > section:first-of-type > div:first-child > p {
     font-size: 16px;
     letter-spacing: 4px;
     margin-bottom: 30px;
     color: white;
 }
 
-.btn-primary {
+main > section:first-of-type button {
     background-color: #C271FF;
     color: white;
     border: none;
@@ -85,57 +87,77 @@ header .logo img {
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(194, 113, 255, 0.5);
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.banner h2 {
+main > section:first-of-type > div:nth-child(2) {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > section:first-of-type h2 {
     font-size: 32px;
     color: white;
-    margin-top: 60px;
     margin-bottom: 40px;
 }
 
-.instructors {
+main > section:first-of-type h2 span {
+    color: #C271FF;
+}
+
+main > section:first-of-type > div:nth-child(2) > div {
     display: flex;
     justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
+    max-width: 1000px;
 }
 
-.instructor img {
+main > section:first-of-type > div:nth-child(2) > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 150px;
+}
+
+main > section:first-of-type > div:nth-child(2) > div > div img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 10px;
 }
 
-.instructor .name {
+main > section:first-of-type > div:nth-child(2) > div > div h3 {
     font-weight: bold;
-    margin-top: 10px;
     font-size: 15px;
+    margin-bottom: 5px;
 }
 
-.instructor .title {
+main > section:first-of-type > div:nth-child(2) > div > div p {
     font-style: italic;
     font-size: 13px;
     color: #C271FF;
 }
 
-/* Quotes */
-.quotes {
+/* ===== QUOTE SECTION ===== */
+main > section:nth-of-type(2) {
     background-color: #C271FF;
-    padding: 80px 0;
+    padding: 80px 20px;
 }
 
-.quote-block {
+main > section:nth-of-type(2) > div {
+    max-width: 700px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 40px;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
-.quote-block img {
+main > section:nth-of-type(2) > div > img {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -143,235 +165,249 @@ header .logo img {
     flex-shrink: 0;
 }
 
-.quote-text {
+main > section:nth-of-type(2) blockquote {
     color: white;
 }
 
-.quote-content {
+main > section:nth-of-type(2) p {
+    color: white;
     font-size: 18px;
     font-style: italic;
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
-.quote-author {
+main > section:nth-of-type(2) h3 {
+    color: white;
     font-weight: bold;
     font-size: 16px;
 }
 
-.quote-job {
+main > section:nth-of-type(2) h3 + p {
     font-style: italic;
     font-size: 14px;
 }
 
-/* Videos */
-.videos {
+/* ===== VIDEOS SECTION ===== */
+main > section:nth-of-type(3) {
     background-color: white;
-    padding: 80px 0;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.videos h2 {
+main > section:nth-of-type(3) > h1 {
     font-size: 32px;
-    margin-bottom: 50px;
     color: #071629;
+    margin-bottom: 50px;
 }
 
-.video-list {
+main > section:nth-of-type(3) > h1 span {
+    color: #C271FF;
+}
+
+main > section:nth-of-type(3) > div {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
 
-.video-item {
+main > section:nth-of-type(3) > div > div {
     width: 220px;
     text-align: left;
 }
 
-.video-thumb {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.video-thumb img {
+main > section:nth-of-type(3) > div > div > img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #C271FF;
-    font-size: 40px;
-    opacity: 0.9;
-}
-
-.video-item h3 {
+main > section:nth-of-type(3) > div > div > h2 {
     font-size: 15px;
-    margin-top: 10px;
     margin-bottom: 5px;
 }
 
-.video-item p {
+main > section:nth-of-type(3) > div > div > p {
     font-size: 13px;
     color: #666;
     margin-bottom: 10px;
 }
 
-.video-author {
+main > section:nth-of-type(3) > div > div > div:first-of-type {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
 }
 
-.video-author img {
+main > section:nth-of-type(3) > div > div > div:first-of-type img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.video-author span {
+main > section:nth-of-type(3) > div > div > div:first-of-type h3 {
     font-size: 13px;
     font-weight: bold;
+    color: #C271FF;
 }
 
-.rating {
+main > section:nth-of-type(3) > div > div > div:last-of-type {
     display: flex;
     align-items: center;
     gap: 3px;
 }
 
-.star {
-    font-size: 14px;
-    color: #ccc;
+main > section:nth-of-type(3) > div > div > div:last-of-type img {
+    width: 14px;
+    height: 14px;
 }
 
-.star.purple {
+main > section:nth-of-type(3) > div > div > div:last-of-type p {
+    margin-left: auto;
+    font-size: 13px;
     color: #C271FF;
 }
 
-.duration {
-    margin-left: auto;
-    font-size: 13px;
-}
-
-/* Membership */
-.membership {
+/* ===== MEMBERSHIP SECTION ===== */
+main > section:nth-of-type(4) {
     background-color: #071629;
-    padding: 80px 0;
+    padding: 80px 20px;
     text-align: center;
     color: white;
 }
 
-.membership h2 {
+main > section:nth-of-type(4) > h1 {
     font-size: 32px;
     margin-bottom: 50px;
+    color: white;
 }
 
-.membership-items {
+main > section:nth-of-type(4) > h1 span {
+    color: #C271FF;
+}
+
+main > section:nth-of-type(4) > div {
+    max-width: 1000px;
+    margin: 0 auto 50px;
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    margin-bottom: 50px;
 }
 
-.membership-item {
+main > section:nth-of-type(4) > div > div {
     width: 200px;
     text-align: center;
+    color: white;
 }
 
-.membership-icon {
+main > section:nth-of-type(4) > div > div img {
     width: 50px;
     height: 50px;
     margin-bottom: 15px;
     filter: invert(1) sepia(1) saturate(5) hue-rotate(200deg);
 }
 
-.membership-item h3 {
+main > section:nth-of-type(4) > div > div h2 {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
     color: white;
 }
 
-.membership-item p {
+main > section:nth-of-type(4) > div > div p {
     font-size: 13px;
     color: #ccc;
     line-height: 1.5;
 }
 
-/* FAQ */
-.faq {
+main > section:nth-of-type(4) > button {
+    background-color: #C271FF;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* ===== FAQ SECTION ===== */
+main > section:nth-of-type(5) {
     background-color: white;
-    padding: 80px 0;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.faq h1 {
+main > section:nth-of-type(5) > h1 {
     font-size: 55px;
     color: #071629;
     margin-bottom: 60px;
 }
 
-.faq-grid {
+main > section:nth-of-type(5) > div {
+    max-width: 800px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px 80px;
-    max-width: 800px;
-    margin: 0 auto;
     text-align: left;
 }
 
-.faq-item h3 {
+main > section:nth-of-type(5) > div > div h2 {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 15px;
     color: #071629;
 }
 
-.faq-item p {
+main > section:nth-of-type(5) > div > div p {
     font-size: 14px;
     color: #666;
     line-height: 1.7;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
     background-color: #071629;
-    padding: 40px 0;
+    padding: 40px 20px;
 }
 
-.footer-top {
+footer > div {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer > div > div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.footer-top .logo img {
+footer > div > div:first-child > div:first-child img {
     height: 35px;
 }
 
-.social-links {
+footer > div > div:first-child > div:last-child {
     display: flex;
     gap: 15px;
 }
 
-.social-links img {
+footer > div > div:first-child > div:last-child img {
     width: 30px;
     height: 30px;
 }
 
-.copyright {
+footer > div > p {
     text-align: center;
     color: #ffffff80;
     font-size: 12px;
